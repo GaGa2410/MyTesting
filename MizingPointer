@@ -1,0 +1,74 @@
+//Created by GAGA//
+//Date-4.11.2022//
+//Pointer//
+
+#include"stdio.h"
+#include"conio.h"
+#include "stdlib.h"
+void structure();
+void dochange(int* ptrC,int* ptrD);
+struct Movie{
+    char *name;
+    char *type;
+    char *date;
+};
+char pointer();
+int *ptrA;
+int *ptrB;
+int *ptrC;
+int *ptrD;
+int x,y;//user data//
+int z,Z;
+int main(){
+    pointer();//using character pointer//
+    structure();//using structure//
+    ptrA=&x;
+    ptrB=&y;
+    printf("Enter your first number:",x);
+    scanf("%d",&x);
+    printf("Enter your second number:",y);
+    scanf("%d",&y);
+    z=*ptrA+*ptrB;
+    printf("The addvalue:%d\n",z);
+    printf("The addvalue address:%d\n",&z);
+    Z=*ptrA-*ptrB;
+    printf("The subvalue:%d\n",Z);
+    printf("The subvalue address:%d\n",&Z);
+    ptrC=&z;
+    ptrD=&Z;
+    dochange(ptrC,ptrD);
+    printf("The +value is %d\n",*ptrC);
+    printf("The -value is %d\n",*ptrD);
+    getch();
+    return 0;
+}
+void dochange(int* ptrC,int* ptrD){
+    (*ptrC)++;
+    (*ptrD)--;
+}
+char pointer(){
+    char *a;
+    a="GaGA(^_^)";
+    printf("This is created by %s\n",a);
+    char *b;
+    b="Using Pointer!";
+    printf("This program is %s\n",b);
+    printf("Character pointer size on my sentence :%d\n",sizeof(a));
+}
+void structure(){
+    struct Movie *GAGA;
+    GAGA =(struct Movie*)malloc(sizeof(struct Movie));
+    GAGA->name="***GAGA***";
+    GAGA->date="_4.11.2022_";
+    GAGA->type="***Mixing Pointers***";
+    printf("The name ::%s\n",GAGA->name);
+    printf("Type : %s\n",GAGA->type);
+    printf("Date:%s\n",GAGA->date);
+}
+
+
+
+
+
+
+
